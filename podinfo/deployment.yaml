@@ -14,7 +14,7 @@ spec:
         app: podinfo
     spec:
       containers:
-        - image: frozenwings/harness-gitops-workshop:1711508661184
+        - image: {{.Values.image}}
           imagePullPolicy: IfNotPresent
           name: podinfo
           resources:
