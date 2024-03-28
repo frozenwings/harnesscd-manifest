@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podinfo
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: podinfo
+  template:
+    metadata:
+      labels:
+        app: podinfo
+    spec:
+      containers:
+        - image: frozenwings/harness-gitops-workshop:1711508661184
+          imagePullPolicy: IfNotPresent
+          name: podinfo
+          resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 9898
