@@ -1,0 +1,5 @@
+service:
+  name: podinfo-demo
+  identifier: podinfodemo
+  orgIdentifier: default
+  projectIdentifier: default_project
